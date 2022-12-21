@@ -1,0 +1,56 @@
+I’m not a developer either. But as i work in IT, i was able to grasp the basics. Of course, this is not meant for simple users to alter the behavior, but this is rather easy to change and writing lengthy guide takes time. Having an option in the plugin to provide your own message would be more convenient, BUT this requires more coding and knowledge and there are no developers caring for this plugin to code that. So…
+
+Out of the guide i provided you need only this (i default to 32-bit versions as this will work on any platform, I also assume you use Windows):
+
+Prepare environment:
+
+Download and install JDK Java SE Development Kit 8 - Downloads (press Accept license and select Windows x86 189.2 MB jdk-8u102-windows-i586.exe)
+
+Download and unpack Eclipse in some folder Eclipse downloads - Select a mirror
+
+run Eclipse
+
+Setup Project in Eclipse with Git support:
+
+File > Import > Git > Project from Git > Next (if there is no such menu, you will need to install EGit plugin for Eclipse, but i think it should already be included)
+
+Clone URI > Next https://github.com/igniterealtime/Openfire.git 4 (Authentication not needed at this point) > Next
+
+Select only “master” > Next
+
+Select directory X:\SomeFolder\Openfire > Next
+
+wait until cloned (it will take long)
+
+Import as a general project > Next > Finish
+
+right click imported project and Delete (do not select deleting files on disk)
+
+File > New > Java Project
+
+Project name: Openfire
+
+Uncheck “use default location” and set directory to X:\SomeFolder\Openfire > Finish
+
+Edit plugin:
+
+In Eclipse expand Openfire folder and go to src/plugins/EmailOnAway/src/java -> com.tempstop - double click EmaiOnAway.java
+
+go to lines 58-59 and change them to:
+
+message.setBody("Your custom message when email is shown  (" + emailTo + ")."); } else { message.setBody("Your custom message when email is not shown."); }
+Close and save the file. If you are going to use unicode characters, Eclipse will automatically change them to \u012e or similar. That’s ok. Leave it like that.
+
+Build plugin:
+
+Press Ant icon on the right (literally a little ant bug icon)
+
+(little ant icon with a plus) Add buildfiles > select Openfire > build > build.xml
+
+right click Ant script - Openfire XMPP Server > Run As > External Tools Configurations… > select Openfire build.xml > JRE tab > select Run in the same JRE as the workspace > Apply > Close (this could already be like that)
+
+Press Run Target button to build a project (a green “play” button)
+
+Wait until it shows BUILD SUCCESSFUL
+
+Then go to X:\SomeFolder\Openfire\target\openfire\plugins and copy EmailOnAway.jar from there. Stop your Openfire. Delete old EmailOnAway.jar and its folder from your Openfire installation folder (Openfire/plugins/). Copy new jar file into Openfire/plugins and run your server. Check if it sends the altered message.
