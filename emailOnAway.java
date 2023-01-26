@@ -149,16 +149,16 @@ public class emailOnAway implements Plugin, PacketInterceptor {
                     			emailTo, 
                     			userFrom.getName(), 
                     			emailFrom,
-                    			"Сообщение из корпоративного мессенджера ФИЦ КНЦ РАН",
-                    			"Здравствуйте!\n\nНе отвечайте на это письмо!\n\nВ корпоративном мессенджере ФИЦ КНЦ РАН" + " " + userFrom.getName() + " оставил(а) для Вас следующее сообщение:" + "\n" + dm + msg.getBody() + dm + "\n\n--\nof.ksc.ru",
+                    			"Сообщение из корпоративного мессенджера Вашей организации",
+                    			"Здравствуйте!\n\nНе отвечайте на это письмо!\n\nВ корпоративном мессенджере Вашей организации" + " " + userFrom.getName() + " оставил(а) для Вас следующее сообщение:" + "\n" + dm + msg.getBody() + dm + "\n\n--\nOpenFire server",
                     			null);
                     	} else {
                     		emailService.sendMessage(userTo.getName(), 
                         			emailTo, 
                         			userFrom.getName(), 
                         			emailFrom,
-                        			"Сообщение из корпоративного мессенджера ФИЦ КНЦ РАН",
-                        			"Здравствуйте!\n\nВ корпоративном мессенджере ФИЦ КНЦ РАН" + " " + userFrom.getName() + " оставил(а) для Вас следующее сообщение:" + "\n" + dm + msg.getBody() + dm + "\n\n--\nof.ksc.ru",
+                        			"Сообщение из корпоративного мессенджера Вашей организации",
+                        			"Здравствуйте!\n\nВ корпоративном мессенджере Вашей организации" + " " + userFrom.getName() + " оставил(а) для Вас следующее сообщение:" + "\n" + dm + msg.getBody() + dm + "\n\n--\nOpenFire server",
                         			null);
                     	}
                     }
