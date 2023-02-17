@@ -5,7 +5,7 @@ It must be compiled using Eclipse IDE or something similar.
 
 See novice instuction [here](https://discourse.igniterealtime.org/t/messages-sent-to-email/61530/10)
 
-Use build.xml in build folder to build plugin. It is for the 4.2.4 Openfire version.
+Use build.xml in build folder to build plugin. It is for the 4.2.4 Openfire version, but compiled plugin is compatible with all new version of server (for now it is 4.7.4).
 
 ![image](https://user-images.githubusercontent.com/37434652/214868791-337d34f5-7127-4adc-a903-4ad840ad8d8a.png)
 
