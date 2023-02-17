@@ -1,6 +1,8 @@
 # emailOnAway
-My custom source code for emailOnAway Openfire plugin (adds send of email on offline status) and compiled jar file ready for use (just place it in /usr/share/openfire/plugins and restart service)
+My custom source code for emailOnAway Openfire plugin (adds send of email on offline status) and compiled jar file ready for use (just place it in /usr/share/openfire/plugins and restart service).
+
 It must be compiled using Eclipse IDE or something similar.
+
 See novice instuction [here](https://discourse.igniterealtime.org/t/messages-sent-to-email/61530/10)
 
 Use build.xml in build folder to build plugin. It is for the 4.2.4 Openfire version.
